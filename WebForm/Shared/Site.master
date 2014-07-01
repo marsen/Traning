@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Style_Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../Style/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="cmBar">
+      <nav class="barOut">
+        <h3>{CompanyName}</h3>
+        <ul class="barNav horz">
+          <li><a href="javascript:void(0)" title="Product1">Product1</a></li>
+          <li><a href="javascript:void(0)" title="Product2">Product2</a></li>
+          <li><a href="javascript:void(0)" title="Product3">Product3</a></li>
+          <li><a href="javascript:void(0)" title="Product4">Product4</a></li>
+          <li><a href="javascript:void(0)" title="Product5">Product5</a></li>
+          <li><a href="javascript:void(0)" title="Service1">Service1</a></li>
+          <li><a href="javascript:void(0)" title="Service2">Service2</a></li>
+          <li><a href="javascript:void(0)" title="Service3">Service3</a></li>
+          <li><a href="javascript:void(0)" title="Service4">Service4</a></li>
+        </ul>
+        <div class="member">
+                <ul class="horz" >
+                <li><a href="javascript:void(0)" title="登入">登入</a></li>
+                <li><a href="javascript:void(0)" title="註冊">註冊</a></li>
+                </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="cmHdr">
+      <header class="hdrOut">
+        <h2><a href="javascript:void(0)" title="{title}">{ 2B || !2B }</a></h2>
+        <ul class="tabNav">
+          <li class="nowNav"><a href="javascript:void(0)" title="Tab I" >Tab I</a></li>
+          <li><a href="javascript:void(0)" title="Tab II" >Tab II</a></li>
+          <li><a href="javascript:void(0)" title="Tab III" >Tab III</a></li>
+          <li><a href="javascript:void(0)" title="Tab IV" >Tab IV</a></li>
+          <li><a href="javascript:void(0)" title="Tab V" >Tab V</a></li>
+        </ul>
+      </header>
+    </div>
+    <div class="wrapper">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="ftrOut">
+      <footer class="ftr clearfix">
+      <div class="ftrNavOut">
+          <nav class="ftrNav">
+          <span>Product & Service</span>
+              <div>
+              <ul class="ftrList">
+                <li><a href="javascript:void(0)" title="Product1">Product1</a></li>
+                <li><a href="javascript:void(0)" title="Product2">Product2</a></li>
+                <li><a href="javascript:void(0)" title="Product3">Product3</a></li>
+                <li><a href="javascript:void(0)" title="Product4">Product4</a></li>
+                <li><a href="javascript:void(0)" title="Product5">Product5</a></li>
+              </ul>
+              <ul class="ftrList">
+                <li><a href="javascript:void(0)" title="Service1">Service1</a></li>
+                <li><a href="javascript:void(0)" title="Service2">Service2</a></li>
+                <li><a href="javascript:void(0)" title="Service3">Service3</a></li>
+                <li><a href="javascript:void(0)" title="Service4">Service4</a></li>
+          </ul>
+              </div>
+          </nav>
+          <nav class="ftrNav">
+          <span>Other Link</span>
+            <ul class="ftrList">
+                <li><a href="javascript:void(0)" target="_blank" title="Other Site I">Other Site I</a></li>
+                <li><a href="javascript:void(0)" target="_blank" title="Other Site II">Other Site II</a></li>
+                <li><a href="javascript:void(0)" target="_blank" title="Other Site III">Other Site III</a></li>
+          </ul>
+          </nav>
+          <nav class="ftrNav">
+          <span>Statement</span>
+            <ul class="ftrList">
+                <li><a href="javascript:void(0)" title="Statement">Statement</a></li>
+                <li><a href="javascript:void(0)" title="Statement I">Statement I</a></li>
+                <li><a href="javascript:void(0)" title="Statement II">Statement II</a></li>
+          </ul>
+          </nav>
+        </div>
+        <div class="cr">
+            <div>版權所有 <a href="javascript:void(0)" target="_blank" title="{Company}">{Company}</a><br />Copyright © 2014 {Company} Corporation. All rights reserved.</div>
+                <p>哈姆雷特-波隆尼爾， 第三場。聆聽他人之意見，但保留自己之判斷。(Take each man's censure, but reserve thy judgment.)</p>
+            <address class="adrs">
+                <ul>
+                    <li>客服專線：{Phone} 分機 {ext}</li>
+					<li>客服時間：周一到周五 9：00~17：00</li>
+                    <li class="adr-mail">客服信箱：<a href="mailto:{ServiceMail}" title="我有問題要反映">{ServiceMail}</a></li>
+                </ul>
+            </address>
+      </div>
+      </footer>
+    </div>
+    </form>
+</body>
+</html>

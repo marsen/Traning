@@ -1,0 +1,62 @@
+﻿*{ outline:0; outline: none; margin:0; padding:0;}
+html *{ position:relative;}
+.horz li{ display:inline;}
+.horz a{ display:inline-block;}
+ul, ol{ list-style:none; }
+
+/*=== Module ====================================*/
+.horz li{ display:inline;}
+.horz a{ display:inline-block;}
+.wrapper{margin: 0 auto 1em;width: 1000px;}
+.clearfix:after{ content:''; display:block; clear:both;}
+.empty:before{ content:'.'; display:inline-block; text-indent:-9999px;}
+.barOut h3 { background:#C00;}
+.cmHdr {background: #afeeee;margin-bottom: 10px}
+.cmHdr h2 a{ display:block; position:relative; height:50px; top:7px;}
+.tabNav { position:absolute; bottom:1px; width:52%; height:30px; left: 150px;}
+.tabNav ul { margin-right: -1px; float: left; list-style: none; }
+.tabNav li { margin-right: -1px; float: left; }
+.tabNav li.nowNav { top:-5px; position:relative; margin-bottom:-5px;}
+.tabNav li.nowNav a, .tabNav li.nowNav a:hover {line-height: 40px;position: relative;top: -5px;background: #fff;border-color: #fff;z-index: 1;}
+.tabNav a { display: block;background: #ba55d3; font-size: 13px;padding: 0 10px 0 30px;line-height: 30px;text-align: center;position: relative;border-bottom: 0;border: solid 1px #B8E3FF;text-decoration: none;font-family: sans-serif; }
+.cmBar{ color:#333; font:100 13px/1 Arial, "細明體"; background:#000; height:25px; z-index:100; position:relative;}
+.barOut, .hdrOut{ width:995px; margin:auto; position:relative;}
+.cmBar a, .cmHdr a{ text-decoration:none; font-family:sans-serif;}
+.cmBar a{ font-size:13px;}
+.barOut h3{ text-indent:-9999px; width:65px; height:15px; top:6px; position:absolute;}
+
+.barNav{ margin-left:75px; position:relative; top:1px\0;}
+.barNav a{	color:#999; padding:1px 3px 0; line-height:23px;}
+.barNav a:hover{ color:#FFF; text-decoration: none;}
+.barNow a{
+	color:#FFF; text-decoration: none; font-weight:900;
+	animation: focusAni 2s infinite; -moz-animation: focusAni 2s infinite; -webkit-animation: focusAni 2s infinite; -o-animation: focusAni 2s infinite; -ms-animation: focusAni 2s infinite;}
+	
+.barNav li:last-child{ border-left:solid 1px #555; padding-left:4px;}
+.barNav li:last-child a{ color:#F7931E;}
+.barNav li:last-child a:hover{ color:#fff;}
+
+.member{ position:absolute; right:0; top:2px;}
+.member a{ color:#FFF;}
+.member a:hover{ color:#fff;/* To fix Panplan */ }
+/*=== footer =======================================*/
+.ftrOut{ background:#4d4d4d; border-top:solid 1px #fff; box-shadow:0 5px 10px #444 inset;}
+.ftr{ font-size:12px; padding:1em 0; color:#b3b3b3; width:995px; margin:0 auto; font:100 12px/1 Arial, "細明體";}
+.ftr a{ text-decoration:none;}
+.ftr a:hover{ text-decoration:underline;}
+.ftrNavOut{ float:right;}
+.ftrNav{ float:left; margin-left:2em;}
+.ftrNav > span{ font-weight:900; margin-bottom:.5em; display:block;}
+.ftrList li{ margin-bottom:.3em; line-height:1.4;}
+.ftrList a, .ftrList a:hover{ color:#fff;}
+.ftrNav:first-child .ftrList{ float:left; margin-left:2em;}
+.ftrNav:first-child .ftrList:first-child{ margin:0;}
+.cr{ float:left; width:50%;}
+.cr a, .cr a:hover{ color:#fff;}
+.cr > div, .cr p{ margin-bottom:.5em; line-height:1.5;}
+.cr > span{ display:block; margin-bottom:.7em;}
+.adrs{ background:#666; padding:.5em; font-style:normal;}
+.adrs li{ margin-right:1em; display:inline; border-left:solid 1px #555; padding-left:1em; line-height:1.5;}
+.adrs li:first-child{ padding:0; border:0;}
+.adrs a{ color:#fff;}
+li.adr-mail{ display:block; border:0; padding:0;}
