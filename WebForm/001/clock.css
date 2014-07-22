@@ -105,3 +105,13 @@
     top: 50%;
     left: 50%; 
     }
+.hand.alert {
+    height:35%;
+    width: 2px;
+    margin-left: -1px;
+    top: 15%;
+    background: #ffffff;
+    border-color: #000000;
+    border: 5px;
+    cursor: pointer;
+    }

@@ -1,6 +1,6 @@
 ﻿window.onload = function () {
     
-    var timer = setInterval(function () { clockStart(); }, 1000);
+    var timer = setInterval(function () { clockStart(); }, 10);
 
     function clockStart() {
         var hourPoint = document.getElementsByClassName("hand hour")[0],
