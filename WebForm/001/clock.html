@@ -19,7 +19,7 @@
             <li></li>
             <li>可以記鬧鐘</li>
         </ul>
-        <div class='clock'>
+        <div class='clock' id="clock">
             <div class="inner_face">
                 <div class="hand hour">
                 </div>
@@ -27,11 +27,13 @@
                 </div>
                 <div class="hand second">
                 </div>
-                <div class="hand alert">
+                <div class="hand alert" id="alert">
                 </div>
             </div>
         </div>
-        <input type="button" value="stop" />
+        <input type="button" value="stop" id="stop" />
         <input type="button" value="reset" />
+        <input type="text" value="00:00" id="alertTime" />
+        <div id="audio"></div>
 </body>
 </html>
