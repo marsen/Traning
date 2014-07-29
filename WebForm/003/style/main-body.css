@@ -1,0 +1,92 @@
+﻿a {
+	outline: none;
+    behavior:expression(this.onFocus=this.blur());
+	cursor:pointer;
+}
+div, h1, h2, h3, h4, p, ul, li {
+	padding:0;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+body {
+	padding:0;
+	margin: 0px;
+	background:url(../images/body.jpg);
+	overflow:scroll;
+	overflow-x:hidden;/*右側捲軸永遠顯示*/
+	font-size: 13px;
+	font-family:'lucida grande', tahoma, verdana, arial, sans-serif;
+}
+/*----最外層包裝----*/
+#wrapper, #wrapper-two-c {
+	width: 995px;
+	margin:0 auto;
+	padding-top: 100px;
+	padding-bottom: 0;
+	background: url(../images/main-body/wrapper-bg.gif) repeat-y;
+	border:solid 1px #A4A4A4;
+	border-top-color:transparent;
+}
+#wrapper{ background:url(../images/paper-bg.png); box-shadow: 0 0 5px #666;}
+#wrapper-two-c {
+	background: url(../images/main-body/wrapper-two-c-bg.gif);
+}
+/*s頁尾*/
+#footer {
+	background-color: transparent;
+	height: 10px;
+	clear: both;
+}
+/*e頁尾*/
+.copyright-text-usepage {
+	font-size: 12px;
+	color: #333;
+	text-align: right;
+	width: 995px;
+	margin-bottom: 10px;
+	line-height: 25px;
+	margin-top: 5px;
+	margin-right: auto;
+	margin-left: auto;
+}
+/*分割線*/
+.line {
+	width: 100%;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #B4BCCF;
+}
+.line-leftmenu {
+	width: 110px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #999;
+	margin-left: 8px;
+	margin-top: 2px;
+	margin-bottom: 3px;
+}
+/*分割線*/
+input:focus, textarea:focus {
+	outline: none;
+}
+/*================*/
+.ftr{ width:995px; margin:6px auto 0; line-height:1.7; font-size:11px; margin-bottom:1em;-webkit-text-size-adjust:none; font-family:"新細明體"}
+.ftr:after{ content:''; display:block; clear:both;}
+.ftr ul{ list-style:none;}
+.ftrNavOut{ float:right;}
+.ftrNav{ float:left; margin-left:2em; color:#3B5998;}
+.ftrList a, .cr a{ display:inline-block; text-decoration:none!important;}
+.ftrList a{ color:#666;}
+.ftrList a:hover{ color:#3B5998!important;}
+.ftrList a span, .cr a span{
+	display:block; width:0; background:#999; height:1px; margin-top:-2px;
+	transition:all .3s ease; -moz-transition:all .3s ease; -webkit-transition:all .3s ease; -o-transition:all .3s ease; -ms-transition:all .3s ease;}
+.ftrList a:hover span, .cr a:hover span{ width:100%;}
+.cr{ color:#333; float:left; width:500px;}
+.cr a{ color:#3B5998;}
+.adrs{ color:#666;}
+.adrs span{ margin-right:1em;}
+.tColor{ color:#3B5998;}
+.kway{ color:#666;}
