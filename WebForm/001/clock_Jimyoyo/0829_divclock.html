@@ -1,0 +1,291 @@
+<html>
+<head>
+	<meta http-equiv = "Content-Type" content = "text/html; charset = utf-8">
+<style type = text/css>
+body {
+	background-color: #FFFFFF
+}
+.circle {
+	width: 10px;
+	height: 10px;
+	background: red;
+	-moz-border-radius: 50px;
+	border-radius: 5px;
+	z-index:0;
+}
+
+.bigCircle{
+	width: 200px;
+	height: 200px;
+	background: black;
+	-moz-border-radius: 50px;
+	border-radius: 100px;
+	z-index:0;
+}
+
+.midCircle{
+	width: 180px;
+	height: 180px;
+	background: white;
+	-moz-border-radius: 50px;
+	border-radius: 100px;
+	z-index:1;
+}
+<!-- after在秒針上添加元素用法
+.secPointer div:after{
+	content: 'o';
+}
+-->
+.secPointer{
+	z-index:2;	
+}
+.minPointer{
+	z-index:3;	
+}
+.hourPointer{
+	z-index:4;
+}
+</style>
+
+<!-- createClock, updatePointers更新指針函式 -->
+<script type="text/javascript">
+
+	var width = 200; // 桌布寬度
+	var height= 200; // 桌布高度
+	var dot = {
+	x : width / 2,
+	y : height / 2,
+	radius : 20
+	}; // 圓點位置，半徑
+	var radius = 125; // 圓半徑
+	var borderWidth = 6; // 圓邊框寬度
+	
+	//指針
+	//var clockPointers = document.createElement('div');
+	
+	//htmlns = "http://www.w3.org/1999/xhtml";
+    div = document.createElement("div");
+	div2 = document.createElement("div");
+	div3 = document.createElement("div");
+
+function createClock()
+{
+	alert("Page is loaded");
+	//document.getElementById("clock").innerHTML = "Paragraph changed.";
+	
+	//創建clock物件
+	var clock = document.getElementById("myElement");
+	//每隔1000毫秒執行一次updatePointers function
+	setInterval(updatePointers, 1000);
+	//initial第一張圖(指針)
+	updatePointers(); 
+}
+//更新指針
+function updatePointers() {
+
+	// get time
+	var crtTime = new Date();
+	var h = crtTime.getHours();//時
+	var m = crtTime.getMinutes();//分
+	var s = crtTime.getSeconds();//秒
+
+	//算出應該指向圓的幾分之幾位置
+	//將h數值範圍縮至1-12，並加上分針的質量
+	h = h > 12 ? h - 12 : h;
+	h = h + m / 60;
+	h = h / 12;
+	m = m / 60;
+	s = s / 60;
+			
+	DrawHour(h, 6, 30);//畫時針
+	DrawMin(m, 4, 60); //畫分針
+	DrawSec(s, 2, 90); //畫秒針
+}
+
+</script>
+
+<!-- DrawSec,DrawMin,DrawMin 及畫線函式 -->
+<script type="text/javascript">
+
+//angle:指針角度, lineWidth:指針寬度, length:指針長度
+function DrawSec(angle, lineWidth, length){
+
+	//求得PI值，方便cos sin運算
+	angle = angle * Math.PI * 2 - Math.PI / 2;
+	
+	x1 = 5;
+	y1 = 5;
+	x2 = length * Math.cos(angle);
+	y2 = length * Math.sin(angle);
+
+	DrawLineSec(x1, y1, x2, y2);
+}
+
+function DrawMin(angle, lineWidth, length){
+	//求得PI值，方便cos sin運算
+	angle = angle * Math.PI * 2 - Math.PI / 2;
+	
+	x1 = 5;
+	y1 = 5;
+	x2 = length * Math.cos(angle);
+	y2 = length * Math.sin(angle);
+
+	DrawLineMin(x1, y1, x2, y2);
+}
+
+function DrawHour(angle, lineWidth, length){
+	//求得PI值，方便cos sin運算
+	angle = angle * Math.PI * 2 - Math.PI / 2;
+	
+	x1 = 5;
+	y1 = 5;
+	x2 = length * Math.cos(angle);
+	y2 = length * Math.sin(angle);
+
+	DrawLineHour(x1, y1, x2, y2);
+}
+
+function DrawLineSec(x1, y1, x2, y2){
+
+    if(y1 < y2){
+        var pom = y1;
+        y1 = y2;
+        y2 = pom;
+        pom = x1;
+        x1 = x2;
+        x2 = pom;
+    }
+
+    var a = Math.abs(x1-x2);
+    var b = Math.abs(y1-y2);
+    var c;
+    var sx = (x1+x2)/2 ;
+    var sy = (y1+y2)/2 ;
+    var width = Math.sqrt(a*a + b*b ) ;
+    var x = sx - width/2;
+    var y = sy;
+
+    a = width / 2;
+
+    c = Math.abs(sx-x);
+
+    b = Math.sqrt(Math.abs(x1-x)*Math.abs(x1-x)+Math.abs(y1-y)*Math.abs(y1-y) );
+
+    var cosb = (b*b - a*a - c*c) / (2*a*c);
+    var rad = Math.acos(cosb);
+    var deg = (rad*180)/Math.PI
+
+    div.setAttribute(
+	'style',
+	'border:1px solid black;width:'+width+'px;height:0px;-moz-transform:rotate('+deg+'deg);-webkit-transform:rotate('+deg+'deg);position:absolute;top:'+y+'px;left:'+x+'px;');   
+
+	document.getElementById("secPointer").appendChild(div);
+}
+
+function DrawLineMin(x1, y1, x2, y2){
+
+    if(y1 < y2){
+        var pom = y1;
+        y1 = y2;
+        y2 = pom;
+        pom = x1;
+        x1 = x2;
+        x2 = pom;
+    }
+
+    var a = Math.abs(x1-x2);
+    var b = Math.abs(y1-y2);
+    var c;
+    var sx = (x1+x2)/2 ;
+    var sy = (y1+y2)/2 ;
+    var width = Math.sqrt(a*a + b*b ) ;
+    var x = sx - width/2;
+    var y = sy;
+
+    a = width / 2;
+
+    c = Math.abs(sx-x);
+
+    b = Math.sqrt(Math.abs(x1-x)*Math.abs(x1-x)+Math.abs(y1-y)*Math.abs(y1-y) );
+
+    var cosb = (b*b - a*a - c*c) / (2*a*c);
+    var rad = Math.acos(cosb);
+    var deg = (rad*180)/Math.PI
+
+    div2.setAttribute(
+	'style',
+	'border:1px solid black;width:'+width+'px;height:0px;-moz-transform:rotate('+deg+'deg);-webkit-transform:rotate('+deg+'deg);position:absolute;top:'+y+'px;left:'+x+'px;');   
+
+	document.getElementById("minPointer").appendChild(div2);
+}
+
+function DrawLineHour(x1, y1, x2, y2){
+
+    if(y1 < y2){
+        var pom = y1;
+        y1 = y2;
+        y2 = pom;
+        pom = x1;
+        x1 = x2;
+        x2 = pom;
+    }
+
+    var a = Math.abs(x1-x2);
+    var b = Math.abs(y1-y2);
+    var c;
+    var sx = (x1+x2)/2 ;
+    var sy = (y1+y2)/2 ;
+    var width = Math.sqrt(a*a + b*b ) ;
+    var x = sx - width/2;
+    var y = sy;
+
+    a = width / 2;
+
+    c = Math.abs(sx-x);
+
+    b = Math.sqrt(Math.abs(x1-x)*Math.abs(x1-x)+Math.abs(y1-y)*Math.abs(y1-y) );
+
+    var cosb = (b*b - a*a - c*c) / (2*a*c);
+    var rad = Math.acos(cosb);
+    var deg = (rad*180)/Math.PI
+
+    div3.setAttribute(
+	'style',
+	'border:1px solid black;width:'+width+'px;height:0px;-moz-transform:rotate('+deg+'deg);-webkit-transform:rotate('+deg+'deg);position:absolute;top:'+y+'px;left:'+x+'px;');   
+
+	document.getElementById("hourPointer").appendChild(div3);
+}
+</script>
+</head>
+
+<body onload="createClock()">
+
+<div class="bigCircle">
+	<div class="midCircle" style="position:relative; top:10px; left:10px;">
+		<div class="circle" style="position:relative; top:85px; left:85px;">
+			<div class="secPointer" id="secPointer"  style="position:relative; top:0px; left:0px;">	
+			</div>
+			<div class="minPointer" id="minPointer"  style="position:relative; top:0px; left:0px;">	
+			</div>
+			<div class="hourPointer" id="hourPointer"  style="position:relative; top:0px; left:0px;">	
+			</div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
