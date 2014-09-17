@@ -1,0 +1,49 @@
+<html id="html">
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<!--載入jQuery.js -->
+<script src="jquery-2.1.1.js" type="text/javascript"></script>  
+<script type="text/javascript" src="jquery.js"></script>
+
+</head>
+<body onload="makeRequest('http://192.168.10.109/traning/003/Handler.ashx')">
+<div class="Header"></div>
+<div class="Body">
+	<div class="bg">
+        <div class="menuBgPosition" style="position:relative;width:0;height:0">
+		    <div class="menuBg">
+                <select id="sortSelect" class="sortSelect">
+                    <option>...
+                    <option value="sortByArticle">文章排序:大->小
+                    <option value="sortByArticleReverse">文章排序:小->大
+                    <option value="sortByLiked">按讚排序:大->小
+                    <option value="sortByLikedReverse">按讚排序:小->大
+                    <option value="sortByName">姓名排序:大->小
+                    <option value="sortByNameReverse">姓名排序:小->大
+                    <option value="sortBySubscribe">訂閱排序:已訂->未訂
+                    <option value="sortBySubscribeReverse">訂閱排序:未訂->已訂
+                </select>
+			    <div class="menu"></div>
+		    </div>
+        </div>   
+        <div class="bgBrown"></div>
+	</div>
+</div>
+
+</body>
+
+<!--template 作法
+<script type="text/template" id="template">
+	<table id="row0" class="memList">
+	<tr>
+	<td class="picture" width="25%"><div class="picBackground"><img src="C:\Users\user1\Desktop\css\images\{Picture}"></img></div></td>
+	<td class="info" width="50%"></td>
+	<td class="isfollow" width="25%"><div class="Btn"></div></td>
+	</tr>
+	</table>
+</script>
+-->
+
+</html>

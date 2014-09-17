@@ -1,0 +1,208 @@
+/*三大區塊其一:Header*/
+.Header{
+	margin-top: -8px;
+	margin-right: -8px;
+	margin-left: -8px;
+	margin-bottom: 0px;
+	
+	background: #ebebeb;
+	height: 10px;
+	
+	border-left-style: solid;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-top-width: 0px;	
+	border-right-style: solid;
+	border-right-width: 0px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	
+	border-color: #c9c9ca;
+}
+
+/*最外層body*/
+body{
+	background: #f7f4e5;
+}
+
+/*三大區塊其二:Body*/
+.Body{
+	padding-left: 300px;
+	padding-right: auto;
+}
+
+/*頻道列表白底*/
+.menuBg{
+	position: relative;
+	display: inline-block;
+	width: 640px;
+	background: white;
+	top: 0px;
+	left: 200px;
+	border: 2px solid;
+	border-color: #eeebd8;
+	border-radius: 10px 0px 0px 0px;
+	z-index: 3;
+}
+
+/*置放channel list所在位置*/
+.menu{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 0px;
+}
+
+/*背景中褐色正方形*/
+.bgBrown{
+	position: relative;
+	width: 1000px;
+	height: 1000px;
+	top: 100px;
+	left: 0px;
+	background: #f6efe7;	
+	z-index: 2;
+}
+
+/*頁面Body其區塊:放置menuBg, bgBrown*/
+.bg{
+	position: relative;
+	display: inline-block; 
+	padding-left: 60px;
+}
+
+/*頻道大頭貼區塊*/
+.picBackground{
+	position: relative;
+	margin-top: 20px;
+	margin-left: 20px;
+	height: 50px;
+	width: 50px;
+	background: #ffffff;
+	border-style: solid;
+	border-color: #c0c0c0;
+	display: inline-block;
+}
+
+/*頻道中間區塊*/
+.info{
+    position: relative;
+    display: inline-block;
+	top: -70px;
+	left: 100px;
+	height: 85px;
+	width: 300px;
+}
+
+/*頻道樣式(橫式圓角矩形)*/
+.memList{
+	height: 100px;
+	width: 600px;
+	background: #f9f9f9;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: #e1e1e1;
+	margin: 0px auto;
+}
+
+/*頻道中的名稱(姓名)*/
+.name{
+    position: relative;
+	color: #a00000;
+	font-weight: bold;
+	font-size: 20px;
+	top: 10px;
+}
+
+/*追蹤按鈕背景*/
+.isfollow{
+    position: relative;
+    display: inline-block;
+    top: -40px;
+	left: 80px;
+	width: 80px;
+	height: 30px;
+	z-index: 10;
+}
+
+/*追蹤按鈕-未追蹤*/
+.receiveBtn{
+	position: relative;
+	display: inline-block;
+	//top: -140px;
+	//left: 480px;
+    top: -40px;
+	left: 80px;
+	background-color: #7d0807;
+	color: white;
+	width: 80px;
+	height: 30px;
+	font-size: 16px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #9a0000;
+}
+
+/*追蹤按鈕-已追蹤*/
+.receivedBtn{
+	position: relative;
+	display: inline-block;
+	//top: -140px;
+	//left: 480px;
+    top: -40px;
+	left: 80px;
+	//background-color: #7d0807;
+	color: #333333;
+	width: 80px;
+	height: 30px;
+	font-size: 16px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #bdbdbd;
+}
+
+/*追蹤按鈕-取消追蹤*/
+.cancelReceivedBtn{
+	position: relative;
+	display: inline-block;
+	//top: -140px;
+	//left: 480px;
+    top: -40px;
+	left: 80px;
+	background-color: #7d0807;
+	color: white;
+	width: 80px;
+	height: 30px;
+	font-size: 16px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #9a0000;
+}
+/*更多按鈕*/
+.addChannelBtn{
+	width: 120px;
+	height: 30px;
+}
+
+/*更多按鈕location*/
+.addMoreBtnLocation{
+	padding-left: 250px;
+}
+
+/*文章字樣*/
+.articleTitle{
+    position: relative;
+	display: inline;
+	top: 10px;
+}
+
+/*文章數量*/
+.articleNum{
+	color: #9f1111;
+	display: inline;
+}
+
+/*收到讚數量*/
+.likedNum{
+	color: #9f1111;
+	display: inline;
+}

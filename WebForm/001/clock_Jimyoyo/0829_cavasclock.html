@@ -1,0 +1,197 @@
+<html>
+
+<head>
+	<meta http-equiv = "Content-Type" content = "text/html; charset = utf-8">
+<style type = text/css>
+body {
+	background-color: #FFFFFF
+}
+.circle {
+	width: 10px;
+	height: 10px;
+	background: red;
+	-moz-border-radius: 50px;
+	border-radius: 5px;
+	z-index:1;
+}
+</style>
+
+
+<script type="text/javascript">
+
+	//背景包含圓圈/圓點
+	var clockBg = document.createElement('canvas');
+	var bgCtx = clockBg.getContext('2d');
+	
+	//指針
+	var clockPointers = document.createElement('canvas');
+	var ptCtx = clockPointers.getContext('2d');
+	
+	var clockTriangle = document.createElement('canvas');
+    var trCtx = clockTriangle.getContext('2d');
+	
+	var width = 500; // 桌布寬度
+	var height= 500; // 桌布高度
+	var dot = {
+	x : width / 2,
+	y : height / 2,
+	radius : 20
+	}; // 圓點位置，半徑
+	var radius = 125; // 圓半徑
+	var borderWidth = 6; // 圓邊框寬度
+	
+
+
+function drawCircle(){
+	bgCtx.beginPath();
+	bgCtx.lineWidth = borderWidth;
+	bgCtx.strokeStyle = '#000';
+	
+	//context.arc(x,y,r,sAngle,eAngle,counterclockwise);counterclockwise:順逆時針
+	bgCtx.arc(dot.x, dot.y, radius, 0, 2 * Math.PI, true);
+	
+	bgCtx.stroke();//畫筆畫出
+	//bgCtx.fill();//填滿圓圈
+	bgCtx.closePath();
+}	
+//畫中心點	
+function drawDot(){
+	bgCtx.beginPath();
+	bgCtx.lineWidth = borderWidth;
+	bgCtx.fillStyle = '#1536ef';
+	bgCtx.arc(dot.x, dot.y, dot.radius, 0, 2 * Math.PI, true);
+	//bgCtx.stroke();//畫筆畫出
+	bgCtx.fill();//填滿圓圈
+	bgCtx.closePath();	
+}
+
+function drawLine(){
+	bgCtx.beginPath();
+	bgCtx.lineWidth = borderWidth;
+	bgCtx.fillStyle = '#000';
+	bgCtx.moveTo(250,250);
+	bgCtx.lineTo(100,250);
+	bgCtx.stroke();//畫筆畫出
+	//bgCtx.fill();//填滿圓圈
+	bgCtx.closePath();	
+	
+}
+
+function updatePointers() {
+	ptCtx.clearRect(0, 0, width, height);　　// 清空畫面
+	trCtx.clearRect(0, 0, width, height);
+	// get time
+	var crtTime = new Date();
+	var h = crtTime.getHours();//時
+	var m = crtTime.getMinutes();//分
+	var s = crtTime.getSeconds();//秒
+
+	//算出應該指向圓的幾分之幾位置
+	//將h數值範圍縮至1-12，並加上分針的質量
+	h = h > 12 ? h - 12 : h;
+	h = h + m / 60;
+	h = h / 12;
+	m = m / 60;
+	s = s / 60;
+
+	drawPointers(s, 2, 92); //畫秒針
+	drawPointers(m, 4, 82); //畫分針
+	drawPointers(h, 6, 65); //畫時針
+	
+	//drawTriangle(s);	
+}
+
+// angle:角度，lineWidth:指針寬度，length:指針長度
+function drawPointers(angle, lineWidth, length) {
+
+	angle = angle * Math.PI * 2 - Math.PI / 2;
+
+	ptCtx.beginPath();
+	ptCtx.lineWidth = lineWidth;
+	ptCtx.strokeStyle = "#000";
+	ptCtx.moveTo(250, 250);
+	//http://qianduanblog.com/post/html5-learning-2-canvas-line.html
+	ptCtx.lineTo(dot.x + length * Math.cos(angle), dot.y + length * Math.sin(angle));
+	ptCtx.stroke();
+	ptCtx.closePath();  
+
+
+}
+
+function drawTriangle(x) {
+
+    trCtx.beginPath();
+    trCtx.moveTo(x,0);
+    trCtx.lineTo(20,0);
+    trCtx.lineTo(0,20);
+    trCtx.fill();
+	trCtx.stroke();//畫筆畫出
+	//bgCtx.fill();//填滿圓圈
+	trCtx.closePath();		
+}
+
+function createClock(){
+	alert("Page is loaded2");
+	//document.getElementById("clock").innerHTML = "Paragraph changed.";
+	
+	//創建clock物件
+	var clock = document.getElementById('clock');
+
+	clockBg.width = width;
+	clockBg.height = height;
+	
+	clockPointers.width = width;
+	clockPointers.height = height;
+
+	clockPointers.style.position = 'absolute';
+	clockPointers.style.left = 0;
+	clockPointers.style.right = 0;
+
+	//子物件:clockBg附屬於clock之下
+	clock.appendChild(clockBg);
+	//子物件:clockPointers附屬於clock之下
+	clock.appendChild(clockPointers);
+
+	clock.appendChild(clockTriangle);
+
+	//畫圓
+	drawCircle();
+	//畫圓點
+	//drawDot();	
+	
+	//test
+	//drawLine();
+	
+	//每隔1000毫秒執行一次updatePointers function
+	setInterval(updatePointers, 1000);
+	//initial第一張圖(指針)
+	updatePointers();
+
+
+}
+
+
+</script>
+
+</head>
+
+<body onload="createClock()">
+
+	<div class="circle" style="position:absolute; top:245px; left:245px;"></div>
+	<div id="clock" style="position:absolute; top:0px; left:0px;"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
