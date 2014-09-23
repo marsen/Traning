@@ -1,0 +1,47 @@
+/*三大區塊其一:Header*/
+.Header{
+}
+
+/*最外層body*/
+body{
+	background: #f7f4e5;
+}
+
+/*三大區塊其二:Body*/
+.Body{
+}
+
+.grid{
+    
+    /*font-size: 0px;*/
+    height: 32px;
+    width: 32px;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    vertical-align: top;
+    
+    /*文字水平置中*/
+    text-align: center;
+    
+    /*文字垂直置中(文字長胖)*/
+    line-height: 32px;
+}
+
+.clanbomber{
+    font-size: 0px;
+}
+
+#clock{
+    display: inline-block;
+}
+
+#msg{   
+}
+
+/*對於未開啟的格子改變滑鼠游標*/
+div[opened='0']{
+    
+    /*滑鼠游標手勢圖示*/
+    cursor: pointer;
+}
